@@ -11,9 +11,16 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', function()
+{
+    return view('auth.login',[]);
+});
 
-Route::get('home', 'HomeController@index');
+Route::get('home', ['middleware' => 'auth', 'uses' => 'PagesController@home']);
+Route::get('about', ['middleware' => 'auth', 'uses' => 'PagesController@about']);
+Route::get('articles', ['middleware' => 'auth', 'uses' => 'ArticlesController@index']);
+
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
