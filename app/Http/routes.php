@@ -16,9 +16,12 @@ Route::get('/', function()
     return view('auth.login',[]);
 });
 
-Route::get('home', ['middleware' => 'auth', 'uses' => 'PagesController@home']);
-Route::get('about', ['middleware' => 'auth', 'uses' => 'PagesController@about']);
-Route::get('articles', ['middleware' => 'auth', 'uses' => 'ArticlesController@index']);
+Route::get('home', ['middleware' => 'auth', 'uses' => 'HomeController@index']);
+Route::get('profile', ['middleware' => 'auth', 'uses' => 'ProfileController@index']);
+Route::post('profile/edit', ['middleware' => 'auth', 'uses' => 'ProfileController@update']);
+Route::post('profile.edit', ['middleware' => 'auth', 'uses' => 'ProfileController@store']);
+
+
 
 
 

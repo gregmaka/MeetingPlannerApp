@@ -27,6 +27,12 @@
 								<input type="text" class="form-control" name="username" value="{{ old('username') }}">
 							</div>
 						</div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Friendly Name</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="friendly_name" value="{{ old('friendly_name') }}">
+                            </div>
+                        </div>
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">E-Mail Address</label>
