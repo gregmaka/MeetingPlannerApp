@@ -12,9 +12,7 @@ class ProfileController extends Controller
 
     public function index()
     {
-        $authID = Auth::user()->id;
-
-        $profiles = User::find($authID);
+        $profiles = User::find(Auth::id());
 
         return view('profile.index', compact('profiles'));
     }
@@ -27,11 +25,8 @@ class ProfileController extends Controller
     public function store()
     {
         $input = Request::all();
-        //$input['published_at'] = Carbon::now();
-
-        $authID = Auth::user()->id;
-
-        $user = User::find($authID);
+        
+        $user = User::find(Auth::id());
 
         $user->update($input);
 
