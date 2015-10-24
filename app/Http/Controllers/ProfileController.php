@@ -3,7 +3,7 @@
 use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\EditProfileRequest;
 use Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,17 +22,17 @@ class ProfileController extends Controller
         return view('profile.edit');
     }
 
-    public function store()
+    public function store(EditProfileRequest $request)
     {
-        $input = Request::all();
-        
+        $input = $request->all();
         $user = User::find(Auth::id());
-
         $user->update($input);
-
         $user->save();
 
+
         return redirect('profile');
+
+
     }
 
 }

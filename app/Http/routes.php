@@ -18,9 +18,8 @@ Route::get('/', function()
 
 Route::get('home', ['middleware' => 'auth', 'uses' => 'HomeController@index']);
 Route::get('profile', ['middleware' => 'auth', 'uses' => 'ProfileController@index']);
-Route::post('profile/edit', ['middleware' => 'auth', 'uses' => 'ProfileController@update']);
+Route::get('profile/edit', ['middleware' => 'auth', 'uses' => 'ProfileController@update']);
 Route::post('profile.edit', ['middleware' => 'auth', 'uses' => 'ProfileController@store']);
-
 
 
 
