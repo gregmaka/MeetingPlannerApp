@@ -17,11 +17,11 @@ Route::get('/', function()
 });
 
 Route::get('home', ['middleware' => 'auth', 'uses' => 'HomeController@index']);
-Route::get('profile', ['middleware' => 'auth', 'uses' => 'ProfileController@index']);
-Route::get('profile/edit', ['middleware' => 'auth', 'uses' => 'ProfileController@update']);
+
+//----Profile Controller Routing
+
 Route::post('profile.edit', ['middleware' => 'auth', 'uses' => 'ProfileController@store']);
-
-
+Route::resource('profile', 'ProfileController');
 
 
 Route::controllers([

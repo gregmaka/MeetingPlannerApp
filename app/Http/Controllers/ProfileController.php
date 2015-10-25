@@ -17,9 +17,9 @@ class ProfileController extends Controller
         return view('profile.index', compact('profiles'));
     }
 
-    public function update()
+    public function show()
     {
-        return view('profile.edit');
+        return view('profile/edit');
     }
 
     public function store(EditProfileRequest $request)
@@ -31,7 +31,6 @@ class ProfileController extends Controller
 
 
         return redirect('profile');
-
 
     }
 
