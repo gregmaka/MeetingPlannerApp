@@ -5,6 +5,7 @@
     <h2>Profile Page</h2>
 
     <p>Name : {{ $profiles->username }}</p>
+    <p>Friendly Name: {{ $profiles->friendly_name }}</p>
     <p>Email Address : {{ $profiles->email }}</p>
     <p>Account Created : {{ $profiles->created_at->format('M j, Y') }}</p>
     <p>Last Updated : {{ $profiles->updated_at->diffForHumans() }}</p>

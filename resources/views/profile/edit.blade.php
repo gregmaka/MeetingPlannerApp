@@ -10,13 +10,19 @@
         <div class="form-group">
             <label class="col-md-4 control-label">New Username</label>
             <div class="col-md-6">
-                <input type="username" class="form-control" name="username" value="{{ old('username') }}">
+                <input type="username" class="form-control" name="username" value="{{ Auth::user()->username }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label">New Friendly Name</label>
+            <div class="col-md-6">
+                <input type="friendly_name" class="form-control" name="friendly_name" value="{{ Auth::user()->friendly_name }}">
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-4 control-label">New E-Mail Address</label>
             <div class="col-md-6">
-                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                <input type="email" class="form-control" name="email" value="{{ Auth::user()->email }}">
             </div>
         </div>
         <div class="form-group">

@@ -22,6 +22,7 @@ class EditProfileRequest extends Request {
 	public function rules()
 	{
 		return [
+            'friendly_name' => 'required',
 			'username' => 'required|min:3',
             'email'    => 'required|email'
 		];
