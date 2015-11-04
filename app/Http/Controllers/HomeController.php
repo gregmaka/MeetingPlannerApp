@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller {
@@ -12,10 +12,19 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
-		return view('home');
-	}
+    public function index()
+    {
+        $content = 'Greg Maka';
+        $lat = '41.734155';
+        $lon = '-87.74540999999999';
+
+
+        Mapper::map($lat, $lon);
+
+        // Add information window for each address
+
+        return view('home');
+    }
 
 	/**
 	 * Show the form for creating a new resource.

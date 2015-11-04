@@ -1,7 +1,5 @@
-@extends('app')
+<div style="height: 400px; width: 400px">
 
-@section('content')
+    {!! Mapper::render() !!}
 
-    <h1>Home Page</h1>
-
-@stop
+</div>
